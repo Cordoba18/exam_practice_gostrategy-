@@ -14,11 +14,15 @@ Creación de sesión
             <div class="col-lg-6 col-md-8">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-header bg-transparent pb-1">
-                        <div class="text-muted text-center mt-2 mb-4"><small>{{ __('Crear nuevo usuario') }}</small></div>
+                        <div class="text-muted text-center mt-2 mb-4"><b>{{ __('Crear nuevo usuario') }}</b></div>
 
                     </div>
                     <div class="card-body  px-lg-5">
-
+                        <div class="text-center text-muted mb-4">
+                            <small>
+                                 Ingresa tus datos para la creación del nuevo tu nuevo usuario:
+                            </small>
+                        </div>
                         <form role="form" method="POST" action="{{ route('register.save') }}">
                             @csrf
 
@@ -27,7 +31,7 @@ Creación de sesión
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Nombre" type="text" name="name" value="" required autofocus>
+                                    <input class="form-control" placeholder="Nombre completo" type="text" name="name" value="" required autofocus>
                                 </div>
 
                             </div>
@@ -58,10 +62,37 @@ Creación de sesión
                                 </div>
                             </div>
 
+                            @if (session('message'))
+                            <div class="form-group">
+
+                            <p class="alert alert-success" role="alert"> {{ session('message') }}</p>
+
+                        </div>
+                        @endif
+
+
+                        @if (session('message_error'))
+                        <div class="form-group">
+
+                        <p class="alert alert-danger" role="alert"> {{ session('message_error') }}</p>
+
+                    </div>
+                    @endif
+
+
+
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary mt-4">{{ __('Crear Cuenta') }}</button>
                             </div>
                         </form>
+                    </div>
+                </div>
+                 <div class="row mt-3">
+
+                    <div class="col-12 text-right">
+                        <a href="{{route('login')}}" class="text-light">
+                            <small>{{ __('Ya tengo cuenta') }}</small>
+                        </a>
                     </div>
                 </div>
             </div>

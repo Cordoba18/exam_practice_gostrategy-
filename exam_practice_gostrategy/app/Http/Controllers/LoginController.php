@@ -36,7 +36,8 @@ class LoginController extends Controller
 
         //Si la contraseña no coincide devuelvo un error
         if (!$user || !Hash::check($request->password, $user->password)) {
-            return response()->json(['error' => 'Credenciales no válidas'], 401);
+
+            return redirect()->route('login')->with("message_error","Credenciales no validas");
         }
 
         // Generar un número random entre 200 y 500
@@ -48,16 +49,28 @@ class LoginController extends Controller
         // Calcular la fecha de expiración (por ejemplo, 1 hora)
         $expiresAt = Carbon::now()->addHour();
 
+
+        $credentials = request()->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+        request()->session()->regenerate();
+
+        }
         // Guardar el token en la base de datos
         $user->tokens()->create([
             'token' => $tokenString,
             'expires_at' => $expiresAt
         ]);
 
-        return response()->json([
-            'token' => $tokenString,
-            'expires_at' => $expiresAt
-        ]);
+        if (Auth::attempt($credentials)) {
+            request()->session()->regenerate();
+
+            }
+
+
+
+
+        return redirect()->route('home')->with("message","Bienvenido $user->name!");
     }
 
 
@@ -71,6 +84,16 @@ class LoginController extends Controller
         Session::flush();
         Auth::logout();
         return redirect()->route('login');
+
+
+    }
+
+
+    public static function get_user_session(Request $request){
+
+
+
+        return Auth::user();
 
 
     }
