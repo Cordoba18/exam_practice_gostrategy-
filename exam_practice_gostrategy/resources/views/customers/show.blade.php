@@ -72,12 +72,12 @@ Customers
 
                               <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Put the address</label>
-                                <input type="text" class="form-control" placeholder="lastname" name="address">
+                                <input type="text" class="form-control" placeholder="address" name="address">
                               </div>
 
                               <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Put the data reg</label>
-                                <input type="date" class="form-control" placeholder="lastname" name="date_reg" required>
+                                <input type="date" class="form-control" placeholder="date_reg" name="date_reg" required>
                               </div>
 
                               <p class="alert alert-danger" role="alert" hidden id="alert_error"></p>
