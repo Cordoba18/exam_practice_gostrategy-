@@ -12,9 +12,6 @@ use App\Http\Controllers\UserController;
 
     Route::middleware(ValidateApiKey::class)->group(function () {
 
-
-
-
     Route::get('/get_users', [UserController::class, 'Get_users']);
 
     Route::prefix('customers')->group(function () {
@@ -25,5 +22,3 @@ use App\Http\Controllers\UserController;
     Route::post('/delete', [CustomerController::class, 'delete']);
     });
 });
-    Route::get('/get_token', [HomeController::class, 'get_token']);
-
