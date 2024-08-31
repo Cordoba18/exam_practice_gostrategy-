@@ -47,7 +47,7 @@ class RegisterController extends Controller
             ]);
 
         } catch (\Throwable $th) {
-            return redirect()->route('register')->with("message_error","There was an error sending data.");
+            return redirect()->route('register')->with("message_error",$th->getMessage());
         }
 
 

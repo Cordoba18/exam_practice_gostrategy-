@@ -28,10 +28,15 @@ class LoginController extends Controller
     {
 
         //Validacion de data
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
+        try {
+            $request->validate([
+                'email' => 'required|email',
+                'password' => 'required'
+            ]);
+        } catch (\Throwable $th) {
+            return redirect()->route('login')->with("message_error",$th->getMessage());
+        }
+
 
         //Busco un usuario con el mismo correo del request
         $user = User::where('email', $request->email)->first();
