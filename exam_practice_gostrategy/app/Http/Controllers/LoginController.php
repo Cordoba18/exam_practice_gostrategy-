@@ -75,7 +75,7 @@ class LoginController extends Controller
 
 
 
-        return redirect()->route('home')->with("Message", "Welcome $user->name");
+        return redirect()->route('home')->with("message", "Welcome $user->name");
     }
 
 
