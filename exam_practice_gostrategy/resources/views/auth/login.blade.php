@@ -13,13 +13,13 @@ Inicio de sesión
             <div class="col-lg-5 col-md-7">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-header bg-transparent pb-2">
-                        <div class="text-muted text-center mt-2 mb-3"><b>{{ __('Iniciar Sesión') }}</b></div>
+                        <div class="text-muted text-center mt-2 mb-3"><b>{{ __('Log In') }}</b></div>
 
                     </div>
                     <div class="card-body px-lg-5">
                         <div class="text-center text-muted mb-4">
                             <small>
-                                  Ingresa tu correo y contraseña para iniciar sesión
+                                Enter your email and password to log in
 
                             </small>
                         </div>
@@ -31,7 +31,7 @@ Inicio de sesión
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Correo" type="email" name="email"  required autofocus>
+                                    <input class="form-control" placeholder="email" type="email" name="email"  required autofocus>
                                 </div>
 
 
@@ -42,7 +42,7 @@ Inicio de sesión
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" name="password" placeholder="Contraseña" type="password" value="" required>
+                                    <input class="form-control" name="password" placeholder="password" type="password" value="" required>
                                 </div>
                             </div>
 
@@ -66,7 +66,7 @@ Inicio de sesión
 
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary my-4">Ingresar</button>
+                                <button type="submit" class="btn btn-primary my-4">Enter</button>
                             </div>
                         </form>
                     </div>
@@ -75,7 +75,7 @@ Inicio de sesión
 
                     <div class="col-12 text-right">
                         <a href="{{route('register')}}" class="text-light">
-                            <small>{{ __('Crear una nueva cuenta') }}</small>
+                            <small>{{ __('Create new account') }}</small>
                         </a>
                     </div>
                 </div>

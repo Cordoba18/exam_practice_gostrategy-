@@ -8,10 +8,10 @@
     <div class="col-xl-6">
         <ul class="nav nav-footer justify-content-center justify-content-xl-end">
             <li class="nav-item">
-                <a href="https://www.linkedin.com/in/jhan-carlos-c%C3%B3rdoba-5640bb297/" class="nav-link" target="_blank">Mi Linkedin</a>
+                <a href="https://www.linkedin.com/in/jhan-carlos-c%C3%B3rdoba-5640bb297/" class="nav-link" target="_blank">My Linkedin</a>
             </li>
             <li class="nav-item">
-                <a href="https://github.com/Cordoba18" class="nav-link" target="_blank">Mi GitHub</a>
+                <a href="https://github.com/Cordoba18" class="nav-link" target="_blank">My GitHub</a>
             </li>
         </ul>
     </div>

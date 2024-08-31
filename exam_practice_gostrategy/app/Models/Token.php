@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Token extends Model
 {
     use HasFactory;
-
+    protected $table = 'tokens';
     protected $fillable = ['user_id', 'token', 'expires_at'];
 
     /**

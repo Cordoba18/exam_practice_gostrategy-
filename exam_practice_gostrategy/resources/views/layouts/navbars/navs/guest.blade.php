@@ -30,7 +30,7 @@
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="{{ route('register') }}">
                         <i class="fa fa-user-plus"  aria-hidden="true"></i>
-                        <span class="nav-link-inner--text">{{ __('Registro') }}</span>
+                        <span class="nav-link-inner--text">{{ __('Register') }}</span>
                     </a>
                 </li>
 

@@ -15,6 +15,9 @@ class RegisterController extends Controller
 {
 
 
+
+
+
     //Metodo que me retorna la nueva vista de Creación de usuario
     public function index(Request $request){
 
@@ -44,19 +47,19 @@ class RegisterController extends Controller
             ]);
 
         } catch (\Throwable $th) {
-            return redirect()->route('register')->with("message_error","Hubo un error en el envio de datos.");
+            return redirect()->route('register')->with("message_error","There was an error sending data.");
         }
 
 
         //Validacion de campos
         if ($name == "") {
-            return redirect()->route('register')->with("message_error","El nombre no puede estar vacio");
+            return redirect()->route('register')->with("message_error","The name cannot be empty");
         }
           if ($email == ""|| !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
-            return redirect()->route('register')->with("message_error","Formato de correo no valido");
+            return redirect()->route('register')->with("message_error","Invalid email format");
         }
           if ($password != $password_confirmation) {
-            return redirect()->route('register')->with("message_error","Las contraseñas no coinciden");
+            return redirect()->route('register')->with("message_error","Passwords do not match");
         }
 
         //Validamos existencia del usuario
@@ -64,11 +67,13 @@ class RegisterController extends Controller
 
         if ($validation_user) {
             //retornamos mensaje de existencia de usuario
-            return redirect()->route('register')->with("message_error","El usuario ya existe");
+            return redirect()->route('register')->with("message_error","The user already exists");
         }else{
 
 
 
+
+            //Insercion de data en base de datos
             try {
                 $user = new User();
                 $user->name = $name;
@@ -76,9 +81,9 @@ class RegisterController extends Controller
                 $user->password = Hash::make($request->password);;
                 $user->save();
 
-                return redirect()->route('register')->with("message","Usuario creado correctamente");
+                return redirect()->route('register')->with("message","Successfully created user");
             } catch (\Throwable $th) {
-                return redirect()->route('register')->with("message_error","Ocurrio un error");
+                return redirect()->route('register')->with("message_error","An error occurred");
             }
 
 

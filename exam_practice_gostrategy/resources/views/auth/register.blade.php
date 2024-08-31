@@ -14,13 +14,13 @@ Creación de sesión
             <div class="col-lg-6 col-md-8">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-header bg-transparent pb-1">
-                        <div class="text-muted text-center mt-2 mb-4"><b>{{ __('Crear nuevo usuario') }}</b></div>
+                        <div class="text-muted text-center mt-2 mb-4"><b>{{ __('Create new account') }}</b></div>
 
                     </div>
                     <div class="card-body  px-lg-5">
                         <div class="text-center text-muted mb-4">
                             <small>
-                                 Ingresa tus datos para la creación del nuevo tu nuevo usuario:
+                                Enter your data to create your new user:
                             </small>
                         </div>
                         <form role="form" method="POST" action="{{ route('register.save') }}">
@@ -31,7 +31,7 @@ Creación de sesión
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Nombre completo" type="text" name="name" value="" required autofocus>
+                                    <input class="form-control" placeholder="full name" type="text" name="name" value="" required autofocus>
                                 </div>
 
                             </div>
@@ -40,7 +40,7 @@ Creación de sesión
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Correo" type="email" name="email" value="" required>
+                                    <input class="form-control" placeholder="email" type="email" name="email" value="" required>
                                 </div>
 
                             </div>
@@ -49,7 +49,7 @@ Creación de sesión
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Contraseña" type="password" name="password" required>
+                                    <input class="form-control" placeholder="password" type="password" name="password" required>
                                 </div>
 
                             </div>
@@ -58,7 +58,7 @@ Creación de sesión
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Confirmar Contraseña" type="password" name="password_confirmation" required>
+                                    <input class="form-control" placeholder="confirmation password" type="password" name="password_confirmation" required>
                                 </div>
                             </div>
 
@@ -82,7 +82,7 @@ Creación de sesión
 
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary mt-4">{{ __('Crear Cuenta') }}</button>
+                                <button type="submit" class="btn btn-primary mt-4">{{ __('Created account') }}</button>
                             </div>
                         </form>
                     </div>
@@ -91,7 +91,7 @@ Creación de sesión
 
                     <div class="col-12 text-right">
                         <a href="{{route('login')}}" class="text-light">
-                            <small>{{ __('Ya tengo cuenta') }}</small>
+                            <small>{{ __('I have accound!') }}</small>
                         </a>
                     </div>
                 </div>
