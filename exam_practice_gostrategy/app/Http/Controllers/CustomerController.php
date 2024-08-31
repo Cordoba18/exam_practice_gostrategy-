@@ -201,13 +201,14 @@ try {
             //armar cuerpo de consulta
             $consult =  Customer::join('communes', 'customers.id_com', "communes.id_com")
             ->join('regions', 'customers.id_reg', "regions.id_reg")
-            ->select("customers.*", 'communes.description as description_commune','regions.description as description_region')
-            ->where('customers.status', 1);
+            ->select("customers.*", 'communes.description as description_commune','regions.description as description_region');
 
             //condiciones para la consulta
             if ($dni != ""  && $email != "") {
-             $consult->where("customers.dni","like","%$dni%")
-             ->orWhere("customers.email","like","%$email%");
+             $consult->where(function($query) use ($dni, $email) {
+                $query->where("customers.dni", "like", "%$dni%")
+                      ->orWhere("customers.email", "like", "%$email%");
+            });
             }else if ($dni) {
                 $consult->where("customers.dni","like","%$dni%");
             }else if($email){
@@ -217,7 +218,7 @@ try {
 
             //obtener customers
 
-            $customers = $consult->get();
+            $customers = $consult->where('customers.status', 1)->get();
 
             //retornar data
             return response()->json([
